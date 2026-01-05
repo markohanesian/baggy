@@ -1,10 +1,16 @@
 {
-  "name": "Hello Extensions",
-  "description": "Base Level Extension",
+  "name": "Form Helper",
+  "description": "A Google chrome extension to assist with filling forms.",
   "version": "1.0",
   "manifest_version": 3,
   "action": {
     "default_popup": "hello.html",
-    "default_icon": "hello_extensions.png"
+    "default_icon": {
+        "16": "images/form-helper-icon16.png",
+        "24": "images/form-helper-icon24.png",
+        "32": "images/form-helper-icon32.png",
+        "48": "images/form-helper-icon48.png",
+        "128": "images/form-helper-icon128.png"
+    }
   }
 }
