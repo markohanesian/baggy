@@ -1,17 +1,36 @@
 <!DOCTYPE html>
 <html>
 <head>
- <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="style.css">
 </head>
 <body>
-  <h3>My Saved Form Fillers</h3>
-  
-  <button class="link-btn" data-url="https://www.linkedin.com/in/yourprofile">LinkedIn Profile</button>
-  <button class="link-btn" data-url="https://yourportfolio.com">Portfolio Link</button>
-  <button class="link-btn" data-url="mso872@gmail.com">Email Address</button>
+  <div class="container">
+    <header>
+      <div class="brand">
+        <img src="images/form-helper-icon24.png" class="logo">
+        <span class="app-name">Form Helper</span>
+      </div>
+      <button id="add-btn" class="text-btn">+ new</button>
+    </header>
 
-  <div id="status"></div>
+    <div id="edit-area" class="hidden">
+      <input type="text" id="label-input" placeholder="Label (e.g., LinkedIn)">
+      <input type="text" id="value-input" placeholder="Value (the link or text)">
+      <div class="form-actions">
+        <button id="save-btn">Save</button>
+        <button id="delete-btn" class="danger-btn">Delete</button> <button id="cancel-btn">Cancel</button>
+      </div>
+    </div>
 
+    <div id="links-grid" class="grid">
+      </div>
+
+    <div id="status"></div>
+    <div class="footer">
+      <a href="privacy.html" target="_blank" style="font-size: 10px; color: #8d8d99; text-decoration: none;">Privacy & Terms</a>
+      <div class="settings-icon">⚙</div>
+    </div>
+  </div>
   <script src="popup.js"></script>
 </body>
 </html>
