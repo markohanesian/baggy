@@ -1,0 +1,18 @@
+# OS Metadata
+.DS_Store
+Thumbs.db
+
+# IDE/Editor Configs
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# Local Logs
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# Build/Dist (if you use a bundler later)
+dist/
+node_modules/
