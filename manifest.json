@@ -13,5 +13,5 @@
         "128": "images/form-helper-icon128.png"
     }
   },
-  "permissions": ["clipboardWrite"]
+  "permissions": ["clipboardWrite", "storage"]
 }
