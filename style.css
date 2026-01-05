@@ -1,73 +1,147 @@
-/* Dark Mode Theme */
 body {
-  width: 250px;
-  background-color: #121214; /* Deep dark background */
+  width: 320px; /* Adjusted for a 2-column grid */
+  background-color: #121214;
   color: #e1e1e6;
-  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  font-family: 'Inter', sans-serif;
   margin: 0;
-  padding: 12px;
+  padding: 16px;
 }
 
-.header {
+header {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  margin-bottom: 15px;
-  padding: 0 4px;
+  margin-bottom: 20px;
 }
 
-.title {
-  font-size: 10px;
-  letter-spacing: 1.5px;
+.brand { display: flex; align-items: center; gap: 8px; }
+.logo { width: 24px; height: 24px; }
+.app-name { font-weight: 600; font-size: 14px; }
+
+.text-btn {
+  background: none;
+  border: none;
   color: #8d8d99;
-  font-weight: bold;
+  cursor: pointer;
+  font-size: 13px;
 }
+.text-btn:hover { color: #007bff; }
 
-.mini-icon { width: 16px; height: 16px; }
-
-/* Grid Layout for Buttons */
+/* Grid Layout */
 .grid {
   display: grid;
   grid-template-columns: 1fr 1fr;
-  gap: 8px;
+  gap: 10px;
 }
 
-.link-btn {
-  background-color: #29292e; /* Button background */
-  color: #e1e1e6;
+.link-card {
+  background-color: #29292e;
+  padding: 12px;
+  border-radius: 8px;
   border: 1px solid transparent;
-  padding: 10px;
-  border-radius: 6px;
   cursor: pointer;
+  position: relative;
+  transition: 0.2s;
+}
+
+.link-card:hover { border-color: #007bff; }
+
+.link-label {
+  display: block;
   font-size: 12px;
-  transition: all 0.2s ease;
+  font-weight: 500;
+  margin-bottom: 4px;
 }
 
-/* The Hover Outline in Backpack Blue */
-.link-btn:hover {
-  border-color: #007bff; /* Singular Blue from icon */
-  background-color: #323238;
+.edit-icon {
+  position: absolute;
+  top: 5px;
+  right: 5px;
+  font-size: 10px;
+  opacity: 0.3;
 }
+.link-card:hover .edit-icon { opacity: 1; }
 
+/* Form Styling */
+.hidden { display: none; }
+#edit-area {
+  background: #202024;
+  padding: 10px;
+  border-radius: 8px;
+  margin-bottom: 15px;
+}
+input {
+  width: 90%;
+  background: #121214;
+  border: 1px solid #29292e;
+  color: white;
+  padding: 8px;
+  margin-bottom: 8px;
+  border-radius: 4px;
+}
 #status {
-  height: 20px;
-  font-size: 11px;
-  color: #00ff41; /* "Matrix" green for success */
   text-align: center;
+  font-size: 11px;
+  color: #00ff41;
   margin-top: 10px;
+  height: 12px;
 }
 
-.footer {
-  margin-top: 10px;
-  padding-top: 10px;
-  border-top: 1px solid #29292e;
-  display: flex;
-  justify-content: flex-end;
-  gap: 15px;
-  color: #8d8d99;
-}
-
-.settings-icon:hover, .power-icon:hover {
-  color: #007bff;
+.danger-btn {
+  background-color: transparent;
+  color: #ff4444;
+  border: 1px solid #ff4444;
+  padding: 8px;
+  border-radius: 4px;
   cursor: pointer;
+  transition: 0.2s;
+}
+
+.danger-btn:hover {
+  background-color: #ff4444;
+  color: white;
+}
+
+/* --- Privacy Page Specific Styles --- */
+
+/* Use a wrapper class so these don't affect the small popup */
+.privacy-body {
+  width: auto; /* Overrides the popup width */
+  max-width: 700px;
+  margin: 40px auto;
+  padding: 20px;
+  line-height: 1.6;
+  background-color: #121214;
+  color: #e1e1e6;
+}
+
+.privacy-body h1, .privacy-body h2 { 
+  color: #007bff; 
+}
+
+.privacy-body .warning-box { 
+  border-left: 4px solid #ff4444; 
+  padding: 15px; 
+  background: #202024; 
+  margin: 20px 0;
+}
+
+.privacy-body a { 
+  color: #007bff; 
+  text-decoration: none; 
+  font-weight: bold; 
+}
+
+.privacy-body a:hover { 
+  text-decoration: underline; 
+}
+
+.privacy-body hr { 
+  border: 0; 
+  border-top: 1px solid #29292e; 
+  margin: 30px 0; 
+}
+
+.privacy-body ul {
+  padding-left: 20px;
 }
