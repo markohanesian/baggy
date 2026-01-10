@@ -6,10 +6,10 @@
   "action": {
     "default_popup": "main.html",
     "default_icon": {
-        "16": "images/form-helper-icon16.png",
-        "32": "images/form-helper-icon32.png",
-        "48": "images/form-helper-icon48.png",
-        "128": "images/form-helper-icon128.png"
+        "16": "icons/form-helper-icon16.png",
+        "32": "icons/form-helper-icon32.png",
+        "48": "icons/form-helper-icon48.png",
+        "128": "icons/form-helper-icon128.png"
     }
   },
   "permissions": ["clipboardWrite", "storage"]
