@@ -1,6 +1,4 @@
 # Form Helper (Backpack) 🎒
-![Form Helper Main Menu](./assets/screenshot-main.png)
-![Form Helper Main Menu](./assets/screenshot-edit.png)
 A minimalist Chrome extension for developers and job seekers to store and quickly copy frequently used text strings (LinkedIn URLs, Portfolios, Email addresses) that standard autocomplete often misses.
 
 ## Features
