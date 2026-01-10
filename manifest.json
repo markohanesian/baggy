@@ -7,7 +7,6 @@
     "default_popup": "main.html",
     "default_icon": {
         "16": "images/form-helper-icon16.png",
-        "24": "images/form-helper-icon24.png",
         "32": "images/form-helper-icon32.png",
         "48": "images/form-helper-icon48.png",
         "128": "images/form-helper-icon128.png"
