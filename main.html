@@ -1,34 +1,50 @@
 <!DOCTYPE html>
 <html>
 <head>
+  <meta charset="UTF-8">
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
   <div class="container">
     <header>
-      <div class="brand">
-        <img src="icons/form-helper-icon32.png" class="logo">
-        <span class="app-name">Form Helper</span>
+      <div class="brand-container">
+        <div class="brand">
+          <img src="icons/form-helper-icon32.png" class="logo" alt="Form Helper Logo">
+          <span class="app-name">Form Helper</span>
+        </div>
+        <p class="tagline">Create helpers to save your info for easy copy and click.</p>
       </div>
       <button id="add-btn" class="text-btn">+ new</button>
     </header>
 
     <div id="edit-area" class="hidden">
-      <input type="text" id="label-input" placeholder="Label (e.g., LinkedIn)">
-      <input type="text" id="value-input" placeholder="Value (the link or text)">
+      <div class="edit-header">
+        <span id="form-title">Edit Helper</span>
+        <button id="cancel-btn" class="close-x">✕</button>
+      </div>
+      
+      <div class="input-group">
+        <label for="label-input">Name</label>
+        <input type="text" id="label-input" placeholder="e.g., Portfolio or ID Number">
+      </div>
+
+      <div class="input-group">
+        <label for="value-input">Content</label>
+        <input type="text" id="value-input" placeholder="Paste link, text, or number here...">
+      </div>
+      
       <div class="form-actions">
-        <button id="save-btn">Save</button>
-        <button id="delete-btn" class="danger-btn">Delete</button> <button id="cancel-btn">Cancel</button>
+        <button id="save-btn" class="primary-btn">Save</button>
+        <button id="delete-btn" class="secondary-btn">Delete</button>
       </div>
     </div>
 
-    <div id="links-grid" class="grid">
-      </div>
+    <div id="links-grid" class="grid"></div>
 
     <div id="status"></div>
+    
     <div class="footer">
-      <a href="privacy.html" target="_blank" style="font-size: 10px; color: #8d8d99; text-decoration: none;">Privacy & Terms</a>
-      <div class="settings-icon">⚙</div>
+      <a href="privacy.html" target="_blank" class="footer-link">Privacy & Terms</a>
     </div>
   </div>
   <script src="popup.js"></script>

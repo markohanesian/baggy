@@ -1,8 +1,8 @@
 body {
-  width: 320px; /* Adjusted for a 2-column grid */
+  width: 300px;
   background-color: #121214;
   color: #e1e1e6;
-  font-family: 'Inter', sans-serif;
+  font-family: "Inter", sans-serif;
   margin: 0;
   padding: 16px;
 }
@@ -10,13 +10,39 @@ body {
 header {
   display: flex;
   justify-content: space-between;
-  align-items: center;
+  align-items: flex-start;
   margin-bottom: 20px;
 }
 
-.brand { display: flex; align-items: center; gap: 8px; }
-.logo { width: 24px; height: 24px; }
-.app-name { font-weight: 600; font-size: 14px; }
+.brand-container {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.brand {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.logo {
+  width: 20px;
+  height: 20px;
+}
+
+.app-name {
+  font-weight: 600;
+  font-size: 15px;
+}
+
+.tagline {
+  margin: 0;
+  font-size: 11px;
+  color: #8d8d99;
+  line-height: 1.4;
+  max-width: 180px;
+}
 
 .text-btn {
   background: none;
@@ -24,61 +50,145 @@ header {
   color: #8d8d99;
   cursor: pointer;
   font-size: 13px;
+  font-weight: 500;
+  padding-top: 2px;
 }
-.text-btn:hover { color: #007bff; }
 
-/* Grid Layout */
+.text-btn:hover {
+  color: #007bff;
+}
+
 .grid {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 10px;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
 }
 
 .link-card {
   background-color: #29292e;
-  padding: 12px;
+  padding: 10px 16px; /* Reduced padding to match input height */
   border-radius: 8px;
   border: 1px solid transparent;
   cursor: pointer;
-  position: relative;
-  transition: 0.2s;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  transition: background-color 0.2s, border-color 0.2s;
+  min-height: 38px; /* Standardizing height close to inputs */
+  box-sizing: border-box;
 }
 
-.link-card:hover { border-color: #007bff; }
+.link-card:hover {
+  border-color: #007bff;
+  background-color: #323238;
+}
 
 .link-label {
-  display: block;
-  font-size: 12px;
+  font-size: 13px;
   font-weight: 500;
-  margin-bottom: 4px;
+  color: #e1e1e6;
 }
 
 .edit-icon {
-  position: absolute;
-  top: 5px;
-  right: 5px;
-  font-size: 10px;
-  opacity: 0.3;
+  font-size: 12px;
+  color: #8d8d99;
+  opacity: 0.6;
+  width: 24px;
+  height: 24px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: color 0.2s, opacity 0.2s;
 }
-.link-card:hover .edit-icon { opacity: 1; }
 
-/* Form Styling */
-.hidden { display: none; }
+.link-card:hover .edit-icon {
+  opacity: 1;
+  color: #007bff;
+}
+
 #edit-area {
   background: #202024;
-  padding: 10px;
-  border-radius: 8px;
+  padding: 16px;
+  border-radius: 12px;
   margin-bottom: 15px;
+  border: 1px solid #323238;
 }
-input {
-  width: 90%;
+
+.input-group {
+  margin-bottom: 14px;
+}
+
+.input-group label {
+  display: block;
+  font-size: 10px;
+  color: #8d8d99;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  margin-bottom: 6px;
+  font-weight: 600;
+}
+
+#edit-area input {
+  width: 100%;
+  box-sizing: border-box;
   background: #121214;
   border: 1px solid #29292e;
   color: white;
-  padding: 8px;
-  margin-bottom: 8px;
-  border-radius: 4px;
+  padding: 10px;
+  border-radius: 6px;
+  font-size: 13px;
 }
+
+.edit-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 16px;
+}
+
+#form-title { 
+  font-size: 12px; 
+  color: #e1e1e6;
+  font-weight: 700;
+}
+
+.close-x {
+  background: none;
+  border: none;
+  color: #8d8d99;
+  font-size: 18px;
+  cursor: pointer;
+  padding: 0;
+  line-height: 1;
+}
+
+.form-actions {
+  display: flex;
+  gap: 10px;
+}
+
+.primary-btn, .secondary-btn {
+  flex: 1;
+  padding: 10px;
+  border-radius: 8px;
+  font-weight: 600;
+  font-size: 13px;
+  cursor: pointer;
+  transition: transform 0.1s;
+}
+
+.primary-btn {
+  background-color: #007bff;
+  color: white;
+  border: none;
+}
+
+.secondary-btn {
+  background-color: transparent;
+  color: #ff4444;
+  border: 1px solid #323238;
+}
+
 #status {
   text-align: center;
   font-size: 11px;
@@ -87,61 +197,30 @@ input {
   height: 12px;
 }
 
-.danger-btn {
-  background-color: transparent;
-  color: #ff4444;
-  border: 1px solid #ff4444;
-  padding: 8px;
-  border-radius: 4px;
-  cursor: pointer;
-  transition: 0.2s;
+.footer {
+  margin-top: 16px;
+  display: flex;
+  justify-content: center;
 }
 
-.danger-btn:hover {
-  background-color: #ff4444;
-  color: white;
+.footer-link {
+  font-size: 11px;
+  color: #8d8d99;
+  text-decoration: none;
 }
 
-/* --- Privacy Page Specific Styles --- */
-
-/* Use a wrapper class so these don't affect the small popup */
-.privacy-body {
-  width: auto; /* Overrides the popup width */
-  max-width: 700px;
-  margin: 40px auto;
-  padding: 20px;
-  line-height: 1.6;
-  background-color: #121214;
-  color: #e1e1e6;
+.footer-link:visited, .footer-link:active {
+  color: #8d8d99;
 }
 
-.privacy-body h1, .privacy-body h2 { 
-  color: #007bff; 
+.footer-link:hover {
+  color: #007bff;
 }
 
-.privacy-body .warning-box { 
-  border-left: 4px solid #ff4444; 
-  padding: 15px; 
-  background: #202024; 
-  margin: 20px 0;
+.hidden {
+  display: none !important;
 }
 
-.privacy-body a { 
-  color: #007bff; 
-  text-decoration: none; 
-  font-weight: bold; 
-}
-
-.privacy-body a:hover { 
-  text-decoration: underline; 
-}
-
-.privacy-body hr { 
-  border: 0; 
-  border-top: 1px solid #29292e; 
-  margin: 30px 0; 
-}
-
-.privacy-body ul {
-  padding-left: 20px;
+.is-editing .grid, .is-editing .footer {
+  display: none;
 }
