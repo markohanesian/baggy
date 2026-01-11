@@ -1,4 +1,4 @@
-# Baggy 🎒
+# Baggy
 A minimalist Chrome extension for that helps you fill out forms more easily by letting you save anything (LinkedIn URLs, Portfolios, Email addresses) to a simple copy and click "helper". Baggy helpers save you time and effort when standard autocomplete doesn't save your frequently used information, or when you just want an easy, simple place to save things.
 
 ## Features
