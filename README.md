@@ -1,11 +1,10 @@
-# Form Helper (Backpack) 🎒
-A minimalist Chrome extension for developers and job seekers to store and quickly copy frequently used text strings (LinkedIn URLs, Portfolios, Email addresses) that standard autocomplete often misses.
+# Baggy 🎒
+A minimalist Chrome extension for that helps you fill out forms more easily by letting you save anything (LinkedIn URLs, Portfolios, Email addresses) to a simple copy and click. These are helpful especially when standard autocomplete doesn't save your frequently used information, or when you just want an easy, simple place to save things.
 
 ## Features
 - **One-Click Copy:** Click any saved item to copy it to your clipboard.
-- **Developer Theme:** Clean, dark-mode interface with a 2-column grid.
 - **Cloud Sync:** Uses `chrome.storage.sync` to keep your links available across any Chrome browser you're logged into.
-- **Local Control:** No external servers, no tracking, and no data collection.
+- **Local, Secure Control:** No external servers, no tracking, and no data collection.
 
 ## Installation (Developer Mode)
 1. Clone or download this repository.
