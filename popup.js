@@ -58,7 +58,11 @@ document.getElementById('add-btn').addEventListener('click', () => {
 document.getElementById('save-btn').addEventListener('click', () => {
   chrome.storage.sync.get(['myLinks'], (result) => {
     let links = result.myLinks || [];
-    const newData = { label: labelInput.value, value: valueInput.value };
+
+    // if no label, add one by default
+    const finalLabel = labelInput.value.trim() || "Add a helper label";
+
+    const newData = { label: finalLabel, value: valueInput.value };
 
     if (editingIndex !== null) {
       links[editingIndex] = newData;
