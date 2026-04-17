@@ -7,14 +7,12 @@
 <body>
   <div class="container">
     <header>
-      <div class="brand-container">
-        <div class="brand">
-          <img src="icons/form-helper-icon32.png" class="logo" alt="Baggy Logo">
-          <span class="app-name">Baggy</span>
-        </div>
-        <p class="tagline">Create helpers to save your info for easy copy and click.</p>
+      <div class="brand">
+        <img src="icons/form-helper-icon32.png" class="logo" alt="Baggy Logo">
+        <span class="app-name">Baggy</span>
+        <span id="pro-badge" class="pro-badge hidden">PRO</span>
       </div>
-      <button id="add-btn" class="text-btn">+ new</button>
+      <button id="add-btn" class="add-btn">+ New</button>
     </header>
 
     <div id="edit-area" class="hidden">
@@ -33,16 +31,58 @@
         <input type="text" id="value-input" placeholder="Paste link, text, or number here...">
       </div>
       
+      <div class="input-group">
+        <label for="tags-input">Tags <span class="label-hint">(comma-separated)</span></label>
+        <input type="text" id="tags-input" placeholder="e.g., work, links">
+      </div>
+
+      <div class="pin-row">
+        <label class="pin-label">
+          <input type="checkbox" id="pin-check"> Pin to top
+        </label>
+      </div>
+
       <div class="form-actions">
         <button id="save-btn" class="primary-btn">Save</button>
         <button id="delete-btn" class="secondary-btn">Delete</button>
       </div>
     </div>
 
+    <div id="controls-bar" class="controls-bar">
+      <div class="search-wrap">
+        <span class="search-icon">⌕</span>
+        <input type="text" id="search-input" class="search-input" placeholder="Search helpers…">
+      </div>
+      <select id="sort-select" class="sort-select">
+        <option value="default">Default</option>
+        <option value="az">A → Z</option>
+        <option value="za">Z → A</option>
+        <option value="newest">Newest</option>
+      </select>
+    </div>
+
     <div id="links-grid" class="grid"></div>
 
-    <div id="status"></div>
-    
+    <div id="status" class="status"></div>
+
+    <div id="pro-banner" class="pro-banner hidden">
+      <div class="pro-banner-text">
+        <strong>Baggy Free</strong> — up to 10 helpers
+      </div>
+      <button id="upgrade-btn" class="upgrade-btn">Upgrade to Pro</button>
+    </div>
+
+    <div id="pro-modal" class="modal-overlay hidden">
+      <div class="modal">
+        <h3>Upgrade to Pro</h3>
+        <p>Free accounts are limited to 10 helpers. Upgrade to Pro for unlimited helpers and future premium features.</p>
+        <div class="modal-actions">
+          <button id="modal-upgrade-btn" class="primary-btn">Upgrade</button>
+          <button id="modal-cancel-btn" class="secondary-btn">Cancel</button>
+        </div>
+      </div>
+    </div>
+
     <div class="footer">
       <a href="privacy.html" target="_blank" class="footer-link">Privacy & Terms</a>
     </div>
