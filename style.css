@@ -225,7 +225,7 @@ header {
   left: 8px;
   top: 50%;
   transform: translateY(-50%);
-  color: #404048;
+  color: #8d8d99;
   font-size: 15px;
   pointer-events: none;
   line-height: 1;
@@ -249,7 +249,7 @@ header {
 }
 
 .search-input::placeholder {
-  color: #404048;
+  color: #777780;
 }
 
 .sort-select {
@@ -384,7 +384,7 @@ header {
 
 .empty-state {
   font-size: 12px;
-  color: #404048;
+  color: #8d8d99;
   text-align: center;
   padding: 20px 0;
   margin: 0;
