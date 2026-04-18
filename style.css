@@ -114,7 +114,7 @@ header {
 .input-group label {
   display: block;
   font-size: 10px;
-  color: #555560;
+  color: #a0a0aa;
   text-transform: uppercase;
   letter-spacing: 0.6px;
   margin-bottom: 5px;
@@ -147,7 +147,7 @@ header {
 }
 
 #edit-area input[type="text"]::placeholder {
-  color: #404048;
+  color: #666670;
 }
 
 .pin-row {
@@ -330,7 +330,7 @@ header {
 
 .link-preview {
   font-size: 11px;
-  color: #555560;
+  color: #9d9da8;
   white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
@@ -345,11 +345,12 @@ header {
 
 .tag {
   font-size: 10px;
-  color: #8d8d99;
-  background: #111113;
-  border: 1px solid #2a2a30;
+  font-weight: 500;
+  color: #e1e1e6;
+  background: #3a3a46;
+  border: 1px solid #4a4a58;
   border-radius: 4px;
-  padding: 1px 5px;
+  padding: 1px 6px;
 }
 
 .edit-icon {
