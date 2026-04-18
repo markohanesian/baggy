@@ -68,7 +68,7 @@ function renderLinks() {
         ? `<div class="card-tags">${item.tags.map(t => `<span class="tag">${escapeHtml(t)}</span>`).join('')}</div>`
         : '';
       card.innerHTML = `
-        <div class="card-body">
+        <div class="card-body" title="Click to copy">
           <div class="card-top">
             ${item.pinned ? '<span class="pin-indicator" title="Pinned">📌</span>' : ''}
             <span class="link-label">${escapeHtml(item.label)}</span>
@@ -76,7 +76,7 @@ function renderLinks() {
           <span class="link-preview">${escapeHtml(preview)}</span>
           ${tagsHtml}
         </div>
-        <span class="edit-icon">✎</span>
+        <span class="edit-icon" title="Edit">✎</span>
       `;
 
       card.addEventListener('click', (e) => {
