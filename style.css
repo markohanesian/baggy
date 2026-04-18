@@ -469,6 +469,66 @@ header {
   gap: 8px;
 }
 
+.modal .input-group {
+  margin-bottom: 10px;
+}
+
+.modal .input-group label {
+  display: block;
+  font-size: 10px;
+  color: #a0a0aa;
+  text-transform: uppercase;
+  letter-spacing: 0.6px;
+  margin-bottom: 5px;
+  font-weight: 600;
+}
+
+.modal .input-group input {
+  width: 100%;
+  box-sizing: border-box;
+  background: #111113;
+  border: 1px solid #2a2a30;
+  color: #e1e1e6;
+  padding: 8px 10px;
+  border-radius: 6px;
+  font-size: 13px;
+  font-family: inherit;
+  outline: none;
+  transition: border-color 0.15s;
+}
+
+.modal .input-group input:focus {
+  border-color: #007bff;
+}
+
+.modal .input-group input::placeholder {
+  color: #666670;
+}
+
+.modal-already {
+  margin: 12px 0 0;
+  font-size: 11px;
+  color: #8d8d99;
+  text-align: center;
+}
+
+.link-btn {
+  background: none;
+  border: none;
+  color: #007bff;
+  font-size: 11px;
+  cursor: pointer;
+  padding: 0;
+  font-family: inherit;
+  text-decoration: underline;
+}
+
+.license-error {
+  font-size: 11px;
+  color: #ff5555;
+  margin: 8px 0 0;
+}
+
 /* ── Footer ── */
 
 .footer {

@@ -74,11 +74,33 @@
 
     <div id="pro-modal" class="modal-overlay hidden">
       <div class="modal">
-        <h3>Upgrade to Pro</h3>
-        <p>Free accounts are limited to 10 helpers. Upgrade to Pro for unlimited helpers and future premium features.</p>
-        <div class="modal-actions">
-          <button id="modal-upgrade-btn" class="primary-btn">Upgrade</button>
-          <button id="modal-cancel-btn" class="secondary-btn">Cancel</button>
+        <!-- Step 1: upsell -->
+        <div id="modal-step-buy">
+          <h3>Upgrade to Baggy Pro</h3>
+          <p>Free accounts are limited to 10 helpers. Pro unlocks unlimited helpers and future premium features — one-time payment, no subscription.</p>
+          <div class="modal-actions">
+            <button id="modal-buy-btn" class="primary-btn">Buy Pro — $4.99</button>
+            <button id="modal-cancel-btn" class="secondary-btn">Cancel</button>
+          </div>
+          <p class="modal-already">Already purchased? <button id="modal-show-activate-btn" class="link-btn">Enter your key</button></p>
+        </div>
+        <!-- Step 2: activate key -->
+        <div id="modal-step-activate" class="hidden">
+          <h3>Activate Baggy Pro</h3>
+          <p>Enter the license key from your purchase confirmation email.</p>
+          <div class="input-group">
+            <label for="license-email-input">Email used at checkout</label>
+            <input type="email" id="license-email-input" placeholder="you@example.com">
+          </div>
+          <div class="input-group">
+            <label for="license-key-input">License key</label>
+            <input type="text" id="license-key-input" placeholder="XXXX-XXXX-XXXX-XXXX">
+          </div>
+          <p id="license-error" class="license-error hidden">Key not found. Double-check your email and key.</p>
+          <div class="modal-actions">
+            <button id="modal-activate-btn" class="primary-btn">Activate</button>
+            <button id="modal-back-btn" class="secondary-btn">Back</button>
+          </div>
         </div>
       </div>
     </div>

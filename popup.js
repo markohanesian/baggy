@@ -179,7 +179,19 @@ function closeEdit() {
   container.classList.remove('is-editing');
 }
 
+// TODO: replace with your actual Netlify site URL after deploy
+const VALIDATE_URL = 'https://your-site.netlify.app/.netlify/functions/validate-license';
+// TODO: replace with your Stripe Payment Link URL
+const STRIPE_PAYMENT_LINK = 'https://buy.stripe.com/your-payment-link';
+
+function showModalStep(step) {
+  document.getElementById('modal-step-buy').classList.toggle('hidden', step !== 'buy');
+  document.getElementById('modal-step-activate').classList.toggle('hidden', step !== 'activate');
+  document.getElementById('license-error').classList.add('hidden');
+}
+
 document.getElementById('upgrade-btn').addEventListener('click', () => {
+  showModalStep('buy');
   proModal.classList.remove('hidden');
 });
 
@@ -187,13 +199,59 @@ document.getElementById('modal-cancel-btn').addEventListener('click', () => {
   proModal.classList.add('hidden');
 });
 
-document.getElementById('modal-upgrade-btn').addEventListener('click', () => {
-  // TODO: wire up Chrome's payment API before shipping Pro
-  chrome.storage.sync.set({ isPro: true }, () => {
-    proModal.classList.add('hidden');
-    updateProStatus();
-    renderLinks();
-  });
+document.getElementById('modal-buy-btn').addEventListener('click', () => {
+  chrome.tabs.create({ url: STRIPE_PAYMENT_LINK });
+  proModal.classList.add('hidden');
+});
+
+document.getElementById('modal-show-activate-btn').addEventListener('click', () => {
+  showModalStep('activate');
+});
+
+document.getElementById('modal-back-btn').addEventListener('click', () => {
+  showModalStep('buy');
+});
+
+document.getElementById('modal-activate-btn').addEventListener('click', async () => {
+  const email = document.getElementById('license-email-input').value.trim();
+  const key = document.getElementById('license-key-input').value.trim();
+  const errorEl = document.getElementById('license-error');
+  const activateBtn = document.getElementById('modal-activate-btn');
+
+  if (!email || !key) {
+    errorEl.textContent = 'Please enter both your email and license key.';
+    errorEl.classList.remove('hidden');
+    return;
+  }
+
+  activateBtn.textContent = 'Checking…';
+  activateBtn.disabled = true;
+
+  try {
+    const res = await fetch(VALIDATE_URL, {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({ email, licenseKey: key }),
+    });
+    const data = await res.json();
+
+    if (data.valid) {
+      chrome.storage.sync.set({ isPro: true }, () => {
+        proModal.classList.add('hidden');
+        updateProStatus();
+        renderLinks();
+      });
+    } else {
+      errorEl.textContent = 'Key not found. Double-check your email and key.';
+      errorEl.classList.remove('hidden');
+    }
+  } catch {
+    errorEl.textContent = 'Could not reach validation server. Try again.';
+    errorEl.classList.remove('hidden');
+  } finally {
+    activateBtn.textContent = 'Activate';
+    activateBtn.disabled = false;
+  }
 });
 
 document.getElementById('search-input').addEventListener('input', (e) => {

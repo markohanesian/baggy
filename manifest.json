@@ -12,5 +12,8 @@
         "128": "icons/form-helper-icon128.png"
     }
   },
-  "permissions": ["clipboardWrite", "storage"]
+  "permissions": ["clipboardWrite", "storage", "tabs"],
+  "host_permissions": [
+    "https://your-site.netlify.app/*"
+  ]
 }
