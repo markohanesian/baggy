@@ -14,6 +14,6 @@
   },
   "permissions": ["clipboardWrite", "storage", "tabs"],
   "host_permissions": [
-    "https://your-site.netlify.app/*"
+    "https://incredible-pasca-90529c.netlify.app/*"
   ]
 }
