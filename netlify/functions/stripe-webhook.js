@@ -28,6 +28,11 @@ exports.handler = async (event) => {
     const rawBody = event.isBase64Encoded
       ? Buffer.from(event.body, 'base64').toString('utf8')
       : event.body;
+    console.log('DEBUG body type:', typeof rawBody);
+    console.log('DEBUG isBase64Encoded:', event.isBase64Encoded);
+    console.log('DEBUG body length:', rawBody?.length);
+    console.log('DEBUG sig header:', sig?.slice(0, 40));
+    console.log('DEBUG whsec prefix:', process.env.STRIPE_WEBHOOK_SECRET?.slice(0, 12));
     stripeEvent = stripe.webhooks.constructEvent(
       rawBody,
       sig,
