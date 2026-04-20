@@ -1,6 +1,13 @@
 const stripe = require('stripe')(process.env.STRIPE_SECRET_KEY);
 const crypto = require('crypto');
 
+console.log('ENV CHECK:', {
+  hasStripeKey: !!process.env.STRIPE_SECRET_KEY,
+  hasWebhookSecret: !!process.env.STRIPE_WEBHOOK_SECRET,
+  hasLicenseSecret: !!process.env.LICENSE_SECRET,
+  hasResendKey: !!process.env.RESEND_API_KEY,
+});
+
 function generateLicenseKey(email, paymentIntentId) {
   const secret = process.env.LICENSE_SECRET;
   const payload = `${email}:${paymentIntentId}`;
