@@ -1,4 +1,6 @@
 # Baggy
+![Image of blue backpack to represent appicon](/store-assets/screenshots/baggy-screenshot-1.png)
+
 A minimalist Chrome extension that saves text, links, IDs, and anything else you copy repeatedly — then lets you paste it anywhere with one click. Stop retyping your portfolio URL, work email, or account numbers. Just click and copy.
 
 ## Features
