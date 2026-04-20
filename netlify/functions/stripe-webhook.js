@@ -54,7 +54,7 @@ exports.handler = async (event) => {
         'Content-Type': 'application/json',
       },
       body: JSON.stringify({
-        from: 'Baggy <noreply@ohanesiandigitalsolutions.com>',
+        from: 'Baggy <onboarding@resend.dev>',
         to: email,
         subject: 'Your Baggy Pro License Key',
         html: `
