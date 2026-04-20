@@ -180,7 +180,7 @@ function closeEdit() {
 }
 
 // TODO: replace with your actual Netlify site URL after deploy
-const VALIDATE_URL = 'https://incredible-pasca-90529c.netlify.app/.netlify/functions/validate-license';
+const VALIDATE_URL = 'https://baggy-mso.netlify.app/.netlify/functions/validate-license';
 // TODO: replace with your Stripe Payment Link URL
 const STRIPE_PAYMENT_LINK = 'https://buy.stripe.com/test_4gMdRa3zK8Sk9dZ3gLeZ200';
 
