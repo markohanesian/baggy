@@ -132,8 +132,7 @@ document.getElementById('save-btn').addEventListener('click', () => {
   chrome.storage.sync.get(['myLinks'], (result) => {
     let links = result.myLinks || [];
 
-    // if no label, add one by default
-    const finalLabel = labelInput.value.trim() || "Add a helper label";
+    const finalLabel = labelInput.value.trim() || 'Untitled Helper';
 
     const tags = tagsInput.value
       ? tagsInput.value.split(',').map(t => t.trim()).filter(Boolean)
@@ -179,9 +178,7 @@ function closeEdit() {
   container.classList.remove('is-editing');
 }
 
-// TODO: replace with your actual Netlify site URL after deploy
 const VALIDATE_URL = 'https://baggy-mso.netlify.app/.netlify/functions/validate-license';
-// TODO: replace with your Stripe Payment Link URL
 const STRIPE_PAYMENT_LINK = 'https://buy.stripe.com/28EeVegrO8VQ2ac2HA28800';
 
 function showModalStep(step) {
@@ -236,6 +233,8 @@ document.getElementById('modal-activate-btn').addEventListener('click', async ()
     const data = await res.json();
 
     if (data.valid) {
+      // isPro is a local cache of server-validated status. Chrome storage
+      // can be set manually via DevTools — accepted tradeoff for extensions.
       chrome.storage.sync.set({ isPro: true }, () => {
         proModal.classList.add('hidden');
         updateProStatus();

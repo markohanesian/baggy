@@ -7,6 +7,15 @@ function generateLicenseKey(email, paymentIntentId) {
   return hmac.slice(0, 16).toUpperCase().match(/.{4}/g).join('-');
 }
 
+function timingSafeEqual(a, b) {
+  if (a.length !== b.length) return false;
+  return crypto.timingSafeEqual(Buffer.from(a), Buffer.from(b));
+}
+
+function isValidEmail(email) {
+  return /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email);
+}
+
 exports.handler = async (event) => {
   const headers = {
     'Access-Control-Allow-Origin': '*',
@@ -35,26 +44,39 @@ exports.handler = async (event) => {
     return { statusCode: 400, headers, body: JSON.stringify({ valid: false, error: 'Missing fields' }) };
   }
 
-  // Look up the payment intent for this email via Stripe
+  if (!isValidEmail(email)) {
+    return { statusCode: 400, headers, body: JSON.stringify({ valid: false, error: 'Invalid email' }) };
+  }
+
   const stripe = require('stripe')(process.env.STRIPE_SECRET_KEY);
+  const normalizedEmail = email.toLowerCase().trim();
+  const normalizedKey = licenseKey.toUpperCase().trim();
 
   try {
-    const sessions = await stripe.checkout.sessions.list({
-      limit: 10,
-    });
+    // Find customer by email to scope the session search correctly
+    const customers = await stripe.customers.list({ email: normalizedEmail, limit: 5 });
 
-    // Find a completed session that matches this email
-    const match = sessions.data.find(
-      s => s.customer_details?.email?.toLowerCase() === email.toLowerCase()
-        && s.payment_status === 'paid'
-    );
+    if (!customers.data.length) {
+      return { statusCode: 200, headers, body: JSON.stringify({ valid: false }) };
+    }
+
+    // Search sessions for each matching customer
+    let match = null;
+    for (const customer of customers.data) {
+      const sessions = await stripe.checkout.sessions.list({
+        customer: customer.id,
+        limit: 10,
+      });
+      match = sessions.data.find(s => s.payment_status === 'paid' && s.payment_intent);
+      if (match) break;
+    }
 
     if (!match) {
       return { statusCode: 200, headers, body: JSON.stringify({ valid: false }) };
     }
 
-    const expected = generateLicenseKey(email, match.payment_intent);
-    const valid = expected === licenseKey.toUpperCase().trim();
+    const expected = generateLicenseKey(normalizedEmail, match.payment_intent);
+    const valid = timingSafeEqual(expected, normalizedKey);
 
     return { statusCode: 200, headers, body: JSON.stringify({ valid }) };
   } catch (err) {
