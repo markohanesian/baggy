@@ -2,32 +2,64 @@
 <html>
 <head>
   <meta charset="UTF-8">
-  <title>Baggy - Privacy & Terms</title>
+  <title>Baggy - Privacy Policy & Terms</title>
   <link rel="stylesheet" href="style.css">
 </head>
 <body class="privacy-body">
-  <h1>Privacy Policy & Terms</h1>
-  <p><strong>Effective Date: January 2026</strong></p>
-  
+  <h1>Privacy Policy &amp; Terms</h1>
+  <p><strong>Effective Date: April 2026</strong></p>
+
   <section>
-    <h2>Data Collection & Storage</h2>
-    <p>Baggy is designed with a "privacy-first" architecture. The extension does <strong>not</strong> collect, store, or transmit any personal data to external servers. All text strings are stored exclusively within your Google Chrome profile via the <code>chrome.storage.sync</code> API.</p>
+    <h2>Overview</h2>
+    <p>Baggy is built with a privacy-first architecture. The extension does <strong>not</strong> collect analytics, track usage, or share your data with third parties. What you save stays in your Chrome profile.</p>
+  </section>
+
+  <section>
+    <h2>Helper Data (Your Snippets)</h2>
+    <p>All helpers — the names and content you save — are stored exclusively within your Google Chrome profile via <code>chrome.storage.sync</code>. This data is synced privately across your Chrome browsers by Google and is never transmitted to Baggy's servers or any third party.</p>
+  </section>
+
+  <section>
+    <h2>Baggy Pro — License Activation</h2>
+    <p>If you choose to upgrade to Baggy Pro, the following applies:</p>
+    <ul>
+      <li><strong>Payment:</strong> Payments are processed entirely by Stripe. Baggy never sees or stores your credit card details. Stripe's privacy policy applies to payment data.</li>
+      <li><strong>Email address:</strong> When activating a Pro license, you provide the email address used at checkout. This email is transmitted to Baggy's license validation server solely to verify your purchase. It is not stored beyond the verification request, not used for marketing, and not shared with any third party.</li>
+      <li><strong>Pro status:</strong> Once verified, your Pro status is stored locally in <code>chrome.storage.sync</code> as a boolean flag. No personal data is retained on Baggy's servers after activation.</li>
+    </ul>
+    <p>Users who do not upgrade to Baggy Pro share no personal data with Baggy whatsoever.</p>
   </section>
 
   <section class="warning-box">
-    <h2>Important Security Warning</h2>
-    <p>Users are strictly advised <strong>not to store highly sensitive information</strong>. While synced via Google, this is not a dedicated vault. Avoid storing:</p>
+    <h2>Security Warning</h2>
+    <p>Baggy is a convenience tool, not a secure vault. Do <strong>not</strong> store:</p>
     <ul>
-      <li>Social Security Numbers (SSN)</li>
       <li>Passwords or PINs</li>
-      <li>Financial or Credit Card details</li>
+      <li>Social Security Numbers (SSN)</li>
+      <li>Credit card or financial details</li>
+      <li>Any information you would not want visible in your browser profile</li>
     </ul>
   </section>
 
   <section>
-    <h2>Developer & Contact</h2>
-    <p>This project is maintained by Mark Ohanesian. You can view the source code or report issues on GitHub:</p>
+    <h2>Permissions Used</h2>
+    <ul>
+      <li><strong>clipboardWrite:</strong> Required to copy helper content to your clipboard on click.</li>
+      <li><strong>storage:</strong> Required to save and sync your helpers across Chrome browsers.</li>
+      <li><strong>tabs:</strong> Required only to open the Stripe payment page in a new tab when you initiate a Pro upgrade.</li>
+    </ul>
+  </section>
+
+  <section>
+    <h2>Changes to This Policy</h2>
+    <p>If this policy changes materially, the effective date above will be updated. Continued use of the extension constitutes acceptance of any revised policy.</p>
+  </section>
+
+  <section>
+    <h2>Contact</h2>
+    <p>Questions or concerns? Contact the developer:</p>
     <p>
+      <a href="mailto:mark@ohanesiandigitalsolutions.com">mark@ohanesiandigitalsolutions.com</a><br>
       <a href="https://github.com/markohanesian" target="_blank">github.com/markohanesian</a>
     </p>
   </section>
