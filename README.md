@@ -1,18 +1,41 @@
 # Baggy
-A minimalist Chrome extension for that helps you fill out forms more easily by letting you save anything (LinkedIn URLs, Portfolios, Email addresses) to a simple copy and click "helper". Baggy helpers save you time and effort when standard autocomplete doesn't save your frequently used information, or when you just want an easy, simple place to save things.
+
+A minimalist Chrome extension that saves text, links, IDs, and anything else you copy repeatedly — then lets you paste it anywhere with one click. Stop retyping your portfolio URL, work email, or account numbers. Just click and copy.
 
 ## Features
-- **One-Click Copy:** Click any saved item to copy it to your clipboard.
-- **Cloud Sync:** Uses `chrome.storage.sync` to keep your links available across any Chrome browser you're logged into.
-- **Local, Secure Control:** No external servers, no tracking, and no data collection.
 
-## Installation (Developer Mode)
-1. Clone or download this repository.
-2. Open Chrome and navigate to `chrome://extensions/`.
-3. Enable **Developer mode** in the top right corner.
-4. Click **Load unpacked** and select the folder containing these files.
+- **One-Click Copy** — click any helper to instantly copy it to your clipboard
+- **Content Preview** — see a snippet of each helper's value at a glance, not just the name
+- **Search** — filter your helpers live as you type
+- **Sort** — order by Default, A→Z, Z→A, or Newest
+- **Pin to Top** — keep your most-used helpers always at the top of the list
+- **Tags** — organize helpers with comma-separated tags that appear as chips on each card
+- **Cloud Sync** — helpers sync across every Chrome browser you're signed into via `chrome.storage.sync`
+- **No tracking, no servers** — all your data stays in your Chrome profile
 
-## Security & Privacy
-- This extension does **not** communicate with external servers.
-- All data is stored within your Google Chrome profile.
-- **Warning:** Do not store sensitive information like passwords, SSNs, or credit card numbers.
+## Baggy Pro
+
+Free accounts support up to 10 helpers. **Baggy Pro** unlocks unlimited helpers for a one-time payment — no subscription.
+
+Upgrade directly from the extension by clicking **Upgrade to Pro**.
+
+## Installation
+
+Available on the [Chrome Web Store](#) *(link coming soon)*.
+
+**Developer mode:**
+1. Clone or download this repository
+2. Go to `chrome://extensions/` in Chrome
+3. Enable **Developer mode** (top right)
+4. Click **Load unpacked** and select this folder
+
+## Privacy & Security
+
+- This extension does **not** collect or transmit your helper data to any external server
+- All helper content is stored locally in your Chrome profile via `chrome.storage.sync`
+- License validation for Pro uses an encrypted one-way key — your payment details are never stored in the extension
+- **Do not store passwords, SSNs, or credit card numbers in helpers**
+
+## Built by
+
+[Ohanesian Digital Solutions](https://ohanesiandigitalsolutions.com)
