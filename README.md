@@ -1,5 +1,4 @@
 # Baggy
-
 A minimalist Chrome extension that saves text, links, IDs, and anything else you copy repeatedly — then lets you paste it anywhere with one click. Stop retyping your portfolio URL, work email, or account numbers. Just click and copy.
 
 ## Features
@@ -21,7 +20,7 @@ Upgrade directly from the extension by clicking **Upgrade to Pro**.
 
 ## Installation
 
-Available on the [Chrome Web Store](#) *(link coming soon)*.
+Available on the [Chrome Web Store](https://chromewebstore.google.com/detail/baggy/nmceikjkakgiffkohkgmbdgeehipmljn?authuser=0&hl=en)
 
 **Developer mode:**
 1. Clone or download this repository
