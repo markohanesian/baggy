@@ -16,3 +16,6 @@ yarn-error.log*
 # Build/Dist (if you use a bundler later)
 dist/
 node_modules/
+
+# Local secrets — never commit
+.env

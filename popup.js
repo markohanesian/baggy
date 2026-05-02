@@ -68,7 +68,7 @@ function renderLinks() {
         ? `<div class="card-tags">${item.tags.map(t => `<span class="tag">${escapeHtml(t)}</span>`).join('')}</div>`
         : '';
       card.innerHTML = `
-        <div class="card-body" title="Click to copy">
+        <div class="card-copy-zone" title="Click to copy">
           <div class="card-top">
             ${item.pinned ? '<span class="pin-indicator" title="Pinned">📌</span>' : ''}
             <span class="link-label">${escapeHtml(item.label)}</span>
@@ -76,13 +76,15 @@ function renderLinks() {
           <span class="link-preview">${escapeHtml(preview)}</span>
           ${tagsHtml}
         </div>
-        <span class="edit-icon" title="Edit">✎</span>
+        <div class="card-edit-zone" title="Edit helper">
+          <span class="edit-icon">✎</span>
+        </div>
       `;
 
       card.addEventListener('click', (e) => {
-        if (e.target.closest('.edit-icon')) {
+        if (e.target.closest('.card-edit-zone')) {
           startEdit(item._origIndex, item);
-        } else {
+        } else if (e.target.closest('.card-copy-zone')) {
           copyToClipboard(item.value);
         }
       });
